@@ -57,10 +57,10 @@ body {
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
     color: var(--primary-green);
-    font-size: 2.2em; /* CAMBIO: Tamaño de fuente más grande para 2 líneas en desktop */
+    font-size: 1.9em; /* CAMBIO CLAVE para 2 líneas en PC */
     letter-spacing: 1px;
     margin: 0;
-    line-height: 1.2; /* Para controlar el espacio entre líneas si se divide */
+    line-height: 1.2;
 }
 
 /* --- Contador --- */
@@ -132,15 +132,14 @@ body {
 
 /* Responsive: Ajustes para pantallas más pequeñas (móviles) */
 @media (max-width: 480px) {
-   /* 🔑 CAMBIO 1: Reducir el ancho disponible (ej. 80%) fuerza el quiebre de línea */
+    /* Mantenemos el contenedor estrecho, pero lo ensanchamos ligeramente. */
     .container {
-        max-width: 80%; /* Más estrecho que el 90% para forzar 3 líneas */
+        max-width: 85%; /* Se ajusta el ancho para que el texto se rompa de forma ideal */
     }
     
     .title-header h1 {
-        /* 🔑 CAMBIO 2: Aumentar el tamaño de la fuente para que se vea más grande */
-        font-size: 1.6em; 
-        line-height: 1.2; /* Ligeramente más apretado para que quepa mejor */
+        font-size: 1.7em; /* CAMBIO CLAVE para letra grande en móvil */
+        line-height: 1.2; 
     }
     
     .countdown-section {
@@ -156,4 +155,5 @@ body {
     }
 
 }
+
 
