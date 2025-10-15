@@ -28,19 +28,26 @@ body {
 
 .container {
     width: 95%;
-    /* 🔑 Ajuste clave: Limita el ancho del contenido a un tamaño de móvil/tarjeta */
-    max-width: 400px; 
+    /* Ajuste clave: Limita el ancho del contenido. 450px es un buen tamaño para tablet vertical/PC */
+    max-width: 450px; 
     text-align: center;
     padding: 0 10px;
 }
 
 /* --- Título y Corazón --- */
 .title-header {
-    margin-bottom: 25px;
+    /* CAMBIO 4: Reducir el espacio entre el título y el contador (de 25px a 10px) */
+    margin-bottom: 10px;
     padding: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.heart-container { 
+    /* CAMBIO 4: Menos espacio debajo del corazón */
+    margin-top: 25px; 
+    margin-bottom: 0; /* Eliminado el margen inferior para pegar el corazón al título */
 }
 
 .heart-icon {
@@ -48,25 +55,24 @@ body {
     height: auto;
 }
 
-.heart-container { /* NUEVO: Contenedor para el corazón */
-    margin-top: 25px; /* CAMBIO: Más espacio arriba del corazón */
-    margin-bottom: 5px; /* Para mantener un poco de espacio con el título */
-}
 
 .title-header h1 {
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
     color: var(--primary-green);
-    font-size: 1.3em; /* CAMBIO CLAVE para 2 líneas en PC */
+    /* CAMBIO 1: Tamaño ajustado para forzar '¡QUEREMOS CELEBRARLO' / 'CONTIGO!' en PC */
+    font-size: 2.1em; 
     letter-spacing: 1px;
     margin: 0;
-    line-height: 1.3;
+    /* CAMBIO 1: Línea más apretada para que se vea mejor */
+    line-height: 1.1; 
 }
 
 /* --- Contador --- */
 .countdown-section {
     background-color: var(--white);
-    padding: 20px 20px 20px 20px;
+    /* CAMBIO 3: Padding: 10px (Superior), 20px (Derecha, Inferior, Izquierda) */
+    padding: 10px 20px 20px 20px;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     margin-bottom: 30px;
@@ -123,27 +129,28 @@ body {
 }
 
 .invitation-image {
-    /* 🔑 Ajuste clave: Esto asegura que la imagen llene el 100% del ancho del contenedor. */
     width: 100%; 
-    /* Esto asegura que la altura se ajuste automáticamente para mantener la proporción. */
     height: auto; 
     display: block; 
 }
 
 /* Responsive: Ajustes para pantallas más pequeñas (móviles) */
 @media (max-width: 480px) {
-    /* Mantenemos el contenedor estrecho, pero lo ensanchamos ligeramente. */
+    
+    /* CAMBIO 2: Reducir el ancho del contenedor a 80% para forzar 3 líneas */
     .container {
-        max-width: 85%; /* Se ajusta el ancho para que el texto se rompa de forma ideal */
+        max-width: 80%; 
     }
     
     .title-header h1 {
-        font-size: 1.7em; /* CAMBIO CLAVE para letra grande en móvil */
-        line-height: 1.2; 
+        /* CAMBIO 2: Aumentar la fuente para que se vea más grande en 3 líneas */
+        font-size: 1.8em; 
+        line-height: 1.1; 
     }
     
     .countdown-section {
-        padding: 15px;
+        /* Reducir padding en móvil para que no se vea tan ancho */
+        padding: 10px 15px 15px 15px;
     }
 
     .time-unit span {
@@ -153,8 +160,4 @@ body {
     .time-unit .label {
         font-size: 0.7em;
     }
-
 }
-
-
-
