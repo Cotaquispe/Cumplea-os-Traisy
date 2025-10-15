@@ -61,11 +61,11 @@ body {
     font-weight: 600;
     color: var(--primary-green);
     /* CAMBIO 1: Tamaño ajustado para forzar '¡QUEREMOS CELEBRARLO' / 'CONTIGO!' en PC */
-    font-size: 2.1em; 
+    font-size: 1.7em; 
     letter-spacing: 1px;
     margin: 0;
     /* CAMBIO 1: Línea más apretada para que se vea mejor */
-    line-height: 1.1; 
+    line-height: 1.3; 
 }
 
 /* --- Contador --- */
@@ -83,6 +83,7 @@ body {
     font-weight: 600;
     color: var(--primary-green);
     margin-bottom: 15px;
+    margin-top: 0px;
 }
 
 .countdown-timer {
@@ -161,3 +162,4 @@ body {
         font-size: 0.7em;
     }
 }
+
