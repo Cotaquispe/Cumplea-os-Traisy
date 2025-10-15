@@ -44,12 +44,12 @@ body {
 }
 
 .heart-icon {
-    width: 45px; 
+    width: 60px; 
     height: auto;
 }
 
 .heart-container { /* NUEVO: Contenedor para el corazón */
-    margin-top: 15px; /* CAMBIO: Más espacio arriba del corazón */
+    margin-top: 25px; /* CAMBIO: Más espacio arriba del corazón */
     margin-bottom: 5px; /* Para mantener un poco de espacio con el título */
 }
 
@@ -66,7 +66,7 @@ body {
 /* --- Contador --- */
 .countdown-section {
     background-color: var(--white);
-    padding: 20px;
+    padding: 0 20px 20px 20px;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     margin-bottom: 30px;
@@ -132,14 +132,15 @@ body {
 
 /* Responsive: Ajustes para pantallas más pequeñas (móviles) */
 @media (max-width: 480px) {
-    /* En pantallas muy pequeñas, podemos ensanchar el contenedor ligeramente para que la tarjeta se vea grande */
+   /* 🔑 CAMBIO 1: Reducir el ancho disponible (ej. 80%) fuerza el quiebre de línea */
     .container {
-        max-width: 90%; 
+        max-width: 80%; /* Más estrecho que el 90% para forzar 3 líneas */
     }
     
     .title-header h1 {
-        font-size: 1.3em; /* CAMBIO: Más pequeño para que quepa en 3 líneas en móvil */
-        line-height: 1.3; /* Ajusta la altura de línea si es necesario */
+        /* 🔑 CAMBIO 2: Aumentar el tamaño de la fuente para que se vea más grande */
+        font-size: 1.6em; 
+        line-height: 1.2; /* Ligeramente más apretado para que quepa mejor */
     }
     
     .countdown-section {
@@ -155,3 +156,4 @@ body {
     }
 
 }
+
