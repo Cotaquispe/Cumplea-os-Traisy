@@ -49,4 +49,32 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 500); 
 });
 
+
 updateCountdown();
+
+// Desbloqueo de Audio al Interactuar (para que se escuche)
+document.addEventListener('DOMContentLoaded', () => {
+    // El setTimeout de la invitación ya existe en tu archivo, no lo dupliques.
+    
+    // CÓDIGO para la música
+    const audio = document.getElementById('background-music');
+
+    const unlockAudio = () => {
+        if (audio && audio.muted) {
+            audio.muted = false;
+            audio.volume = 0.6; // Ajusta el volumen (0.0 a 1.0)
+            
+            // Eliminar los listeners después de la primera interacción
+            document.removeEventListener('click', unlockAudio);
+            document.removeEventListener('touchend', unlockAudio);
+            document.removeEventListener('scroll', unlockAudio);
+        }
+    };
+
+    // Escuchar eventos de interacción del usuario para desbloquear el audio
+    document.addEventListener('click', unlockAudio);
+    document.addEventListener('touchend', unlockAudio);
+    document.addEventListener('scroll', unlockAudio);
+});
+
+// Nota: La línea updateCountdown(); debe estar fuera del DOMContentLoaded si ya estaba ahí.
