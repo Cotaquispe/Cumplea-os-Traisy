@@ -9,7 +9,8 @@ const hoursEl = document.getElementById('hours');
 const minutesEl = document.getElementById('minutes');
 const secondsEl = document.getElementById('seconds');
 const invitationCard = document.getElementById('invitation-card');
-const audio = document.getElementById('background-music'); // Obtenemos el audio globalmente
+// Obtener el elemento de audio globalmente
+const audio = document.getElementById('background-music'); 
 
 // Función para formatear el tiempo
 function formatTime(time) {
@@ -41,20 +42,21 @@ function updateCountdown() {
 
 // Iniciar la cuenta regresiva
 const countdownInterval = setInterval(updateCountdown, 1000);
-
-// Llamada inicial para mostrar los números inmediatamente
 updateCountdown();
 
 
-// --- FUNCIÓN DE DESBLOQUEO DE AUDIO ---
+// --- FUNCIÓN DE DESBLOQUEO DE AUDIO (Se ejecuta con la interacción) ---
 const unlockAudio = () => {
-    // 🔑 CLAVE: Intentamos reproducir el audio y quitarle el silencio con la primera interacción
     if (audio && audio.muted) {
+        // 🔑 CLAVE: Quitar el silencio y forzar la reproducción
         audio.muted = false;
-        audio.play().catch(e => console.log("Audio play blocked:", e)); // Manejamos si hay error
         audio.volume = 0.6; 
+        audio.play().catch(e => {
+             // Esto es para depurar. Si falla, lo ignoramos y el usuario tendrá que activar el volumen manualmente.
+             console.log("Error al intentar reproducir el audio:", e);
+        });
         
-        // Limpiamos los listeners para que la función no se siga ejecutando
+        // Limpiamos los listeners para que no se ejecute múltiples veces
         document.removeEventListener('click', unlockAudio);
         document.removeEventListener('touchend', unlockAudio);
         document.removeEventListener('scroll', unlockAudio);
@@ -63,12 +65,13 @@ const unlockAudio = () => {
 
 // --- Manejo de la Carga de Contenido (DOMContentLoaded) ---
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Animación de la Tarjeta (Tu código original)
+    // 1. Animación de la Tarjeta
     setTimeout(() => {
         invitationCard.classList.add('visible');
     }, 500); 
 
     // 2. Activamos los listeners de interacción para el audio
+    // Esto asegura que al tocar o hacer scroll, el audio intente reproducirse.
     document.addEventListener('click', unlockAudio);
     document.addEventListener('touchend', unlockAudio);
     document.addEventListener('scroll', unlockAudio);
