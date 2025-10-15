@@ -57,16 +57,16 @@ body {
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
     color: var(--primary-green);
-    font-size: 1.9em; /* CAMBIO CLAVE para 2 líneas en PC */
+    font-size: 1.3em; /* CAMBIO CLAVE para 2 líneas en PC */
     letter-spacing: 1px;
     margin: 0;
-    line-height: 1.2;
+    line-height: 1.3;
 }
 
 /* --- Contador --- */
 .countdown-section {
     background-color: var(--white);
-    padding: 0 20px 20px 20px;
+    padding: 20px 20px 20px 20px;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     margin-bottom: 30px;
@@ -155,5 +155,6 @@ body {
     }
 
 }
+
 
 
