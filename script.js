@@ -40,23 +40,20 @@ function updateCountdown() {
     }
 }
 
-// Iniciar la cuenta regresiva y animación
+// Iniciar la cuenta regresiva
 const countdownInterval = setInterval(updateCountdown, 1000);
 
+// Llamada inicial para mostrar los números inmediatamente
+updateCountdown();
+
+// --- Bloque Único: Manejo de la Carga de Contenido (DOMContentLoaded) ---
 document.addEventListener('DOMContentLoaded', () => {
+    // 1. Animación de la Tarjeta (Tu código original)
     setTimeout(() => {
         invitationCard.classList.add('visible');
     }, 500); 
-});
 
-
-updateCountdown();
-
-// Desbloqueo de Audio al Interactuar (para que se escuche)
-document.addEventListener('DOMContentLoaded', () => {
-    // El setTimeout de la invitación ya existe en tu archivo, no lo dupliques.
-    
-    // CÓDIGO para la música
+    // 2. Desbloqueo de Audio (Música)
     const audio = document.getElementById('background-music');
 
     const unlockAudio = () => {
@@ -76,5 +73,3 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('touchend', unlockAudio);
     document.addEventListener('scroll', unlockAudio);
 });
-
-// Nota: La línea updateCountdown(); debe estar fuera del DOMContentLoaded si ya estaba ahí.
