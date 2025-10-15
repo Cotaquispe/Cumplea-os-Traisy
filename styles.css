@@ -23,7 +23,7 @@ body {
     display: flex;
     justify-content: center; /* Centra horizontalmente todo el contenido principal */
     align-items: flex-start;
-    padding-top: 20px;
+    padding-top: 10px;
 }
 
 .container {
@@ -44,18 +44,23 @@ body {
 }
 
 .heart-icon {
-    width: 30px; 
+    width: 45px; 
     height: auto;
-    margin-bottom: 5px;
+}
+
+.heart-container { /* NUEVO: Contenedor para el corazón */
+    margin-top: 15px; /* CAMBIO: Más espacio arriba del corazón */
+    margin-bottom: 5px; /* Para mantener un poco de espacio con el título */
 }
 
 .title-header h1 {
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
     color: var(--primary-green);
-    font-size: 1.8em;
+    font-size: 2.2em; /* CAMBIO: Tamaño de fuente más grande para 2 líneas en desktop */
     letter-spacing: 1px;
     margin: 0;
+    line-height: 1.2; /* Para controlar el espacio entre líneas si se divide */
 }
 
 /* --- Contador --- */
@@ -133,7 +138,8 @@ body {
     }
     
     .title-header h1 {
-        font-size: 1.5em;
+        font-size: 1.3em; /* CAMBIO: Más pequeño para que quepa en 3 líneas en móvil */
+        line-height: 1.3; /* Ajusta la altura de línea si es necesario */
     }
     
     .countdown-section {
@@ -147,4 +153,5 @@ body {
     .time-unit .label {
         font-size: 0.7em;
     }
+
 }
